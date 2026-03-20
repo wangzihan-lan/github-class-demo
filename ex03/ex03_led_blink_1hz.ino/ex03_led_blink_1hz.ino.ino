@@ -49,7 +49,16 @@ void loop() {
     case 17: if (currentMillis - previousMillis >= shortOff) { toggleLed(); sosState = 18; } break;
 
     // 长停顿后重置
-    case 18: if (currentMillis - previousMillis >= sosPause) { sosState = 0; } break;
+    case 18: if (currentMillis - previousMillis >= sosPause) { 
+      sosState = 0;
+      Serial.println("SOS循环完成，开始下一轮");  // 新增：串口打印调试信息
+       }
+        break;
+  }
+  // 新增：打印当前状态机阶段
+  if (currentMillis % 100 == 0) {  // 每100ms打印一次，避免刷屏
+    Serial.print("当前SOS状态：");
+    Serial.println(sosState);
   }
 }
 
