@@ -2,6 +2,8 @@
   作业3：使用millis()实现LED SOS闪烁
   SOS定义：3短闪 → 3长闪 → 3短闪 → 长停顿（2000ms），循环执行
   短闪：亮200ms，灭200ms；长闪：亮600ms，灭200ms
+  millis()优势：非阻塞延时，避免delay()导致程序卡死  // 新增注释
+  硬件适配：适用于Arduino UNO/Nano，内置LED接2号引脚  // 新增注释
 */
 
 const int ledPin = 2;                  // 内置LED引脚
