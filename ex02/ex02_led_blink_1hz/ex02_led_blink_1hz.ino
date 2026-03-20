@@ -6,7 +6,7 @@
 */
 const int ledPin = 2;
 unsigned long lastTime = 0;
-const unsigned long interval = 500; // 1Hz=周期1000ms，占空比50%
+const unsigned long interval = 500; // 闪烁间隔：500ms（1Hz周期的一半）  // 改变这行注释
 bool ledOn = false;
 
 void setup() {
